@@ -1,7 +1,5 @@
-# Early Warning and Resilience Analysis
-
-This repository contains the Python workflow used for a study on spatially adaptive
-social protection under compound climate and conflict shocks in Amhara Region, Ethiopia.
+Work Sample: Social Protection and Household Food-Security Vulnerability under Compound Shocks
+Python-based analysis workflow for a study of 1,939 agricultural households in four highland woredas of Amhara, Ethiopia. The workflow supports data cleaning, construction of a PCA-based asset index, machine-learning and multilevel modelling, spatial analysis, and visualization of PSNP–food-security relationships under compound climate, market, and conflict shocks.
 
 ## Objective
 To clean, analyze, and visualize household, climate, conflict, and spatial data in order
