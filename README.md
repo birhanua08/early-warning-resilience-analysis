@@ -1,45 +1,92 @@
-Work Sample: Social Protection and Household Food-Security Vulnerability under Compound Shocks
-Python-based analysis workflow for a study of 1,939 agricultural households in four highland woredas of Amhara, Ethiopia. The workflow supports data cleaning, construction of a PCA-based asset index, machine-learning and multilevel modelling, spatial analysis, and visualization of PSNP–food-security relationships under compound climate, market, and conflict shocks.
+# Social Protection and Household Food-Security Vulnerability under Compound Shocks
 
-## Objective
-To clean, analyze, and visualize household, climate, conflict, and spatial data in order
-to identify vulnerability patterns and support early-warning and adaptive social-protection decisions.
+Python analysis workflow for a study examining how PSNP participation, compound shock
+exposure, and household resilience capacities are associated with food insecurity among
+1,939 agricultural households in four highland woredas of Amhara Region, Ethiopia.
+
+## Related Manuscript
+**Social Protection and Household Food-Security Vulnerability under Compound Shocks:  
+Evidence from Highland Livelihood Zones in Amhara, Ethiopia**  
+Author: Birhanu Ayalew Teka  
+Target journal: *Food Policy*
+
+## Study Focus
+The analysis examines:
+- The relationship between compound shocks and household food insecurity.
+- The protective association between PSNP participation and food insecurity.
+- Spatial heterogeneity in PSNP effects across districts.
+- The use of household assets, geographic access, altitude, and support measures as
+  vulnerability and resilience indicators.
 
 ## Data
-- Anonymized household survey sample
-- Administrative/spatial boundary data
-- Climate and conflict indicator data
+The study uses household survey data from Tach Gayint, Sahila, Sedie Muja, and Meketwa
+woredas in South Gondar and Wag Himra zones. GPS coordinates were recorded for 1,933
+households.
 
-Note: Full survey data are not shared due to confidentiality. A de-identified sample dataset
-is included to demonstrate the analytical workflow.
+**Confidentiality note:** Raw household survey data and precise household GPS coordinates
+are not shared in this repository. A de-identified or synthetic sample dataset may be
+included to illustrate the workflow.
 
-## Workflow
-1. Data cleaning and validation
-2. Construction of vulnerability and resilience indicators
-3. Spatial data processing and integration
-4. Descriptive and spatial analysis
-5. Visualization of vulnerability patterns and early-warning implications
+## Analytical Components
+- Data cleaning and correction of asset-index placeholder codes.
+- Construction of a PCA-weighted household asset index.
+- Construction of a direct informal-assistance indicator.
+- Descriptive analysis of compound-shock exposure and food insecurity.
+- OLS and regularized Random Forest models.
+- Kebele-grouped cross-validation for predictive performance.
+- Multilevel district-by-PSNP interaction model with cluster-robust standard errors.
+- Exploratory ridge-regularized GWR and spatial cross-validation diagnostics.
+- Mapping and visualization of household locations and spatial patterns.
+
+## Main Analytical Finding
+PSNP participation is associated with significantly lower food insecurity in Meketwa,
+while the association is attenuated and statistically indistinguishable from zero in
+Sedie Muja. The study therefore supports district-differentiated social-protection
+planning rather than fine-grained spatial interpolation.
 
 ## Technologies
 - Python
 - Pandas
+- NumPy
 - GeoPandas
-- PostGIS
+- scikit-learn
+- XGBoost
+- Statsmodels
 - Matplotlib
+- PostGIS / spatial data processing
 - Jupyter Notebook
+
+## Repository Structure
+```text
+├── README.md
+├── requirements.txt
+├── data/
+│   └── sample_data.csv
+├── notebooks/
+│   └── 01_analysis.ipynb
+├── src/
+│   ├── 01_data_cleaning.py
+│   ├── 02_variable_construction.py
+│   ├── 03_descriptive_analysis.py
+│   ├── 04_machine_learning.py
+│   ├── 05_spatial_analysis.py
+│   └── 06_figures_tables.py
+├── outputs/
+│   ├── figures/
+│   └── tables/
+└── .gitignore
+```
 
 ## How to Run
 ```bash
 pip install -r requirements.txt
 ```
 
-Open and run the Jupyter Notebook or Python scripts in the `src/` folder.
+Run the Jupyter notebook or execute the Python scripts in the `src/` folder.
 
 ## Outputs
-- Vulnerability indicator tables
-- Maps and charts
-- Analytical outputs supporting the related article
-
-## Related Article
-“Spatially Adaptive Social Protection Under Compound Climate and Conflict Shocks in Amhara Region.”# early-warning-resilience-analysis
-Python workflow for climate, conflict, and household vulnerability analysis supporting spatially adaptive social protection research
+- Cleaned analysis dataset.
+- Vulnerability and asset-index tables.
+- Model-performance results.
+- Multilevel PSNP interaction estimates.
+- Maps and figures illustrating spatial patterns.
