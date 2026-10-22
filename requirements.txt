@@ -1,0 +1,7 @@
+pandas
+numpy
+geopandas
+matplotlib
+jupyter
+sqlalchemy
+psycopg2-binary
